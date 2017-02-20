@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Below is a simple interactive map of the UK showing the 147 weather observation station locations used by the UK Met office. The data was correct when it was created 20/02/2017. Image was created using R and leaflet.
+Below is a simple interactive map of the UK showing the 147 weather observation station locations used by the UK Met office. The data was correct when it was created 20/02/2017. Image was created using R and leaflet. Link to the gitbub repo is here: https://github.com/eastc5/Data_Products_Project_1
 
 ```{R}
 library(jsonlite)
