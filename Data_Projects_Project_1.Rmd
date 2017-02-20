@@ -1,0 +1,26 @@
+---
+title: "Map of UK Met Office Weather Stations"
+author: "Campbell Easton"
+date: "20 February 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Below is a simple interactive map of the UK showing the 147 weather observation station locations used by the UK Met office. The data was correct when it was created 20/02/2017. Image was created using R and leaflet.
+
+```{R}
+library(jsonlite)
+library(leaflet)
+
+sites<-as.data.frame(fromJSON(txt = "./data/sitelist.json"))
+names(sites)<-c("elevation","id","lat","lng","name","region","unitaryAurthArea","obsSource","nationalPark")
+siteslatlng<-sites[,c("lat","lng")]
+sitesnames<-sites[,"name"]
+siteslatlng$lat<-as.numeric(siteslatlng$lat)
+siteslatlng$lng <-as.numeric(siteslatlng$lng)
+
+siteslatlng %>% leaflet() %>% addTiles() %>% addMarkers(popup = sitesnames,clusterOptions = markerClusterOptions())
+```
