@@ -9,4 +9,4 @@ The repo contains the following files:
 * Original Data file that was downloaded for the assigment
  
 
-You can find a compiled version of the assigment on Rpubs here: https://eastc5.github.io/Data_Products_Project_1
+You can find a compiled version of the assigment on Rpubs here: https://eastc5.github.io/Map_of_UK_Weather_Stations/
